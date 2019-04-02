@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<p id="demo"> asd </p>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+<script>
+
+
+
+
+ function red() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  }
+
+function loadDoc() {
+
+  var xhttp = new XMLHttpRequest();
+
+  xhttp.open("GET", "text1.txt", true);
+
+  xhttp.onreadystatechange = red;
+
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
